@@ -151,7 +151,7 @@ void drawBreakingBad(){
     glVertex2i(405, 295);
     glEnd();
 
-    // Br box
+    // Ba box
     glColor3ub(50, 190, 95);
     glBegin(GL_QUADS);
     glVertex2i(330, 190);
