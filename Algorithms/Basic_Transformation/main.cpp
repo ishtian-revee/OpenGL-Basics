@@ -14,7 +14,7 @@ int newX, newY;
 void makeChoice();
 void Translation();
 //void Rotation();
-//void Scaling();
+void Scaling();
 
 void myInit(void){
 
@@ -34,9 +34,9 @@ void myDisplay(void){
 
     glColor3ub(255, 0, 128);
     glBegin(GL_TRIANGLES);
-    glVertex2d(280, 50);
-    glVertex2d(185, 235);
-    glVertex2d(90, 50);
+    glVertex2d(280, 100);
+    glVertex2d(185, 285);
+    glVertex2d(90, 100);
     glEnd();
 
     if(choice == 1){
@@ -47,7 +47,7 @@ void myDisplay(void){
 //        Rotation();
     }else if(choice == 3){
 
-//        Scaling();
+        Scaling();
     }
 
     glFlush ();
@@ -84,7 +84,8 @@ void makeChoice(){
 
     }else if(choice == 3){
 
-
+        cout << endl << "Enter the value of x coordinate and y coordinate: ";
+        cin >> newX >> newY;
     }else if(choice == 4){
 
         exit(1);
@@ -98,8 +99,18 @@ void Translation(){
 
     glColor3ub(0, 102, 204);
     glBegin(GL_TRIANGLES);
-    glVertex2d(280+newX+100, 200+newY);
-    glVertex2d(185+newX+100, 385+newY);
-    glVertex2d(90+newX+100, 200+newY);
+    glVertex2d(280+newX+150, 100+newY);
+    glVertex2d(185+newX+150, 285+newY);
+    glVertex2d(90+newX+150, 100+newY);
+    glEnd();
+}
+
+void Scaling(){
+
+    glColor3ub(0, 102, 204);
+    glBegin(GL_TRIANGLES);
+    glVertex2d(280+newX+150, 100-newY);
+    glVertex2d(185+150, 285+newY);
+    glVertex2d(90-newX+150, 100-newY);
     glEnd();
 }
